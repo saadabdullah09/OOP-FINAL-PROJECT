@@ -16,6 +16,6 @@ Object-Oriented Programming course using C++.
 - C++
 - Object-Oriented Programming
 
-## Author
-SAAD ABDULLAH
-HARIS AHMED KHAN
+## Authors
+- SAAD ABDULLAH
+- HARIS AHMED KHAN
