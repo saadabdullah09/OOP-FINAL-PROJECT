@@ -1,2 +1,21 @@
-# OOP-FINAL-PROJECT
-Final semester OOP project developed in C++. This repository demonstrates core object-oriented programming concepts, including classes, objects, inheritance, polymorphism, encapsulation, constructors, and dynamic memory management through a practical application.
+# Final Semester OOP C++ Project
+
+## About
+This project was developed as part of the final semester
+Object-Oriented Programming course using C++.
+
+## Concepts Used
+- Classes and Objects
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Constructors and Destructors
+- Dynamic Memory Management
+
+## Technologies
+- C++
+- Object-Oriented Programming
+
+## Author
+SAAD ABDULLAH
+HARIS AHMED KHAN
