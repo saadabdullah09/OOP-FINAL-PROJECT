@@ -1,21 +1,49 @@
-#include <iostream>
-using namespace std;
 
-struct Tile { char tileLetter; bool filled; }
+#include "heist.h"
 
-struct Clue { char clueLetter; int cluePosition; WordRow clueRow; }
+int main()
+{
+    GameState gameState = GameState::Menu;
+    int input;
 
-struct Location { string locName; char letterClueLoc; int boardPosLoc; WordRow locRow; bool locSearchFlag; }
+    cout << "Welcome to THE LOCKER HEIST!" << endl;
+    cout << "A mysterious theft has taken place at a wealthy owner's cottage." << endl;
+    cout << "Your job is to investigate and identify the culprit." << endl;
 
-enum GameState { Menu, Playing, Won, Lost, Exit }
+    while(gameState != GameState::Exit)
+    {
+        displayMainMenu();
+        cin >> input;
 
-enum MenuChoice { New Game, Leader/Score Board, About, Rules, Exit }
+        MenuChoice choice = static_cast<MenuChoice>(input);
 
-enum WordRow { Word 1, Word 2 }
+        switch(choice)
+        {
+            case MenuChoice::NewGame:
+                cout << "\nStarting New Game..." << endl;
+                break;
 
+            case MenuChoice::LeaderScoreBoard:
+                cout << "\nLeaderboard is not available yet." << endl;
+                break;
 
-int main() {
-	cout << "Hello World!" << endl;
-	system("pause");
-	return 0;
+            case MenuChoice::About:
+                cout << "\nTHE LOCKER HEIST is a detective mystery game." << endl;
+                break;
+
+            case MenuChoice::Rules:
+                cout << "\nGame rules will be added soon." << endl;
+                break;
+
+            case MenuChoice::Exit:
+                gameState = GameState::Exit;
+                cout << "\nExiting Game..." << endl;
+                break;
+
+            default:
+                cout << "\nInvalid choice!" << endl;
+        }
+    }
+
+    return 0;
 }
