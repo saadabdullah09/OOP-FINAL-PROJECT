@@ -59,4 +59,57 @@ enum class MenuChoice
 
 void displayMainMenu();
 
+class Cottage
+{
+private:
+    Location* locations;
+    int totalLocations;
+
+public:
+    Cottage();
+    Cottage(const Cottage& other);
+    Cottage& operator=(const Cottage& other);
+    ~Cottage();
+
+    void displayLocations();
+    bool searchLocation(int index);
+};
+
+class Character
+{
+protected:
+    string characterName;
+    string characterRole;
+    string nationality;
+    bool isCulprit;
+
+public:
+    Character(string name, string role, string nationality, bool culprit);
+    virtual void display() = 0;
+    string getName();
+    bool getCulprit();
+    virtual ~Character();
+};
+
+class Victim : public Character
+{
+public:
+    Victim(string name, string nationality);
+    void display() override;
+};
+
+class Suspect : public Character
+{
+public:
+    Suspect(string name, string role, string nationality, bool culprit);
+    void display() override;
+};
+
+class Detective : public Character
+{
+public:
+    Detective(string name, string nationality);
+    void display() override;
+};
+
 #endif

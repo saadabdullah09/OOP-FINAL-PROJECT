@@ -1,4 +1,3 @@
-
 #include "heist.h"
 
 int main()
@@ -20,28 +19,49 @@ int main()
         switch(choice)
         {
             case MenuChoice::NewGame:
-                cout << "\nStarting New Game..." << endl;
+            {
+                Cottage cottage;
+                int locationChoice;
+
+                cout << endl << "Starting New Game..." << endl;
+
+                while(true)
+                {
+                    cottage.displayLocations();
+
+                    cout << endl << "Enter location number to search (0 to return) = ";
+                    cin >> locationChoice;
+
+                    if(locationChoice == 0)
+                    {
+                        break;
+                    }
+
+                    cottage.searchLocation(locationChoice - 1);
+                }
+
                 break;
+            }
 
             case MenuChoice::LeaderScoreBoard:
-                cout << "\nLeaderboard is not available yet." << endl;
+                cout << endl << "Leaderboard is not available yet." << endl;
                 break;
 
             case MenuChoice::About:
-                cout << "\nTHE LOCKER HEIST is a detective mystery game." << endl;
+                cout << endl << "THE LOCKER HEIST is a detective mystery game." << endl;
                 break;
 
             case MenuChoice::Rules:
-                cout << "\nGame rules will be added soon." << endl;
+                cout << endl << "Game rules will be added soon." << endl;
                 break;
 
             case MenuChoice::Exit:
                 gameState = GameState::Exit;
-                cout << "\nExiting Game..." << endl;
+                cout << endl << "Exiting Game..." << endl;
                 break;
 
             default:
-                cout << "\nInvalid choice!" << endl;
+                cout << endl << "Invalid choice!" << endl;
         }
     }
 
