@@ -1,4 +1,3 @@
-
 #ifndef HEIST_H
 #define HEIST_H
 
@@ -109,6 +108,36 @@ class Detective : public Character
 {
 public:
     Detective(string name, string nationality);
+    void display() override;
+};
+
+// These groups separate the suspects according to their connection to the victim.
+class BusinessRelations : virtual public Suspect
+{
+public:
+    BusinessRelations(string name, string role, string nationality, bool culprit);
+    void display() override;
+};
+
+class HouseHelp : public Suspect
+{
+public:
+    HouseHelp(string name, string role, string nationality, bool culprit);
+    void display() override;
+};
+
+class CloseRelations : virtual public Suspect
+{
+public:
+    CloseRelations(string name, string role, string nationality, bool culprit);
+    void display() override;
+};
+
+// The PA is connected to both the business and personal sides of the victim.
+class PA : public BusinessRelations, public CloseRelations
+{
+public:
+    PA(string name, string nationality, bool culprit);
     void display() override;
 };
 
